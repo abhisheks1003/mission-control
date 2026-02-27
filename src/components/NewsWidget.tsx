@@ -58,6 +58,8 @@ export default function NewsWidget() {
           <a
             key={item.id}
             href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
             className="news-card group"
             aria-label={`${item.source}: ${item.title}`}
           >

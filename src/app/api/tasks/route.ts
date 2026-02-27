@@ -2,6 +2,14 @@ import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
+export const dynamic = "force-dynamic";
+
+const CORS_HEADERS = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization",
+};
+
 type TaskPriority = "high" | "medium" | "low";
 type TaskStatus = "pending" | "done";
 type TaskAction = "add" | "update" | "delete";
@@ -36,9 +44,13 @@ function writeTasks(tasks: Task[]): void {
   fs.writeFileSync(TASKS_FILE, JSON.stringify(tasks, null, 2), "utf-8");
 }
 
+export async function OPTIONS() {
+  return new NextResponse(null, { status: 204, headers: CORS_HEADERS });
+}
+
 export async function GET() {
   const tasks = readTasks();
-  return NextResponse.json(tasks);
+  return NextResponse.json(tasks, { headers: CORS_HEADERS });
 }
 
 export async function POST(request: NextRequest) {
@@ -76,5 +88,5 @@ export async function POST(request: NextRequest) {
   }
 
   writeTasks(tasks);
-  return NextResponse.json({ ok: true, tasks });
+  return NextResponse.json({ ok: true, tasks }, { headers: CORS_HEADERS });
 }
