@@ -71,3 +71,60 @@ body {
   background: linear-gradient(155deg, rgba(34, 211, 238, 0.23), rgba(34, 211, 238, 0.08));
   transform: translateY(-1px);
 }
+
+/* Widget section label — shared across all widgets */
+.widget-header {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: rgb(148 163 184); /* slate-400 */
+  font-weight: 500;
+}
+
+/* Priority indicator dots */
+.priority-high {
+  background-color: rgb(251 113 133); /* rose-400 */
+}
+
+.priority-medium {
+  background-color: rgb(251 191 36); /* amber-400 */
+}
+
+.priority-low {
+  background-color: rgb(148 163 184); /* slate-400 */
+}
+
+/* News strip: horizontal scrollable row */
+.news-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .news-strip {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.25rem;
+    gap: 0.5rem;
+  }
+}
+
+.news-card {
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  text-decoration: none;
+  transition: border-color 160ms ease, background 160ms ease;
+  scroll-snap-align: start;
+  min-width: 200px;
+}
+
+.news-card:hover {
+  border-color: rgba(103, 232, 249, 0.2);
+  background: rgba(103, 232, 249, 0.04);
+}

@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Mission Control",
-  description: "Daily Traction dashboard for Morning Brief, North Star, and Top Moves.",
+  description: "Personal dashboard — email, tasks, calendar, weather, and news at a glance.",
 };
 
 export default function RootLayout({

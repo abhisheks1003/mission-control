@@ -1,0 +1,6 @@
+[
+  { "id": "t1", "title": "Review Q1 OKRs", "priority": "high", "dueDate": "2026-02-27", "status": "pending" },
+  { "id": "t2", "title": "Send invoice to Acme Corp", "priority": "high", "dueDate": "2026-02-27", "status": "pending" },
+  { "id": "t3", "title": "Book dentist appointment", "priority": "medium", "dueDate": "2026-02-28", "status": "pending" },
+  { "id": "t4", "title": "Read chapter 5 of Deep Work", "priority": "low", "dueDate": "2026-03-01", "status": "pending" }
+]
